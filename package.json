@@ -1,0 +1,33 @@
+{
+	"name": "@dxdns/feflow-cli",
+	"version": "0.0.1",
+	"description": "init projects with @dxdns/feflow",
+	"bin": {
+		"feflow": "./output/index.js"
+	},
+	"type": "module",
+	"scripts": {
+		"build": "tsc",
+		"feflow": "npm run build && node ./output/index.js",
+		"format": "prettier --write .",
+		"lint": "prettier --check ."
+	},
+	"keywords": [
+		"cli",
+		"feflow",
+		"svelte",
+		"vite",
+		"dxdns"
+	],
+	"license": "MIT",
+	"devDependencies": {
+		"prettier": "^3.4.2",
+		"@types/node": "^24.0.1",
+		"@types/prompts": "^2.4.9",
+		"typescript": "^5.1.6"
+	},
+	"dependencies": {
+		"chalk": "^5.4.1",
+		"prompts": "^2.4.2"
+	}
+}
