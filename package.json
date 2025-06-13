@@ -1,6 +1,6 @@
 {
 	"name": "@dxdns/feflow-cli",
-	"version": "0.0.1",
+	"version": "0.0.4",
 	"description": "init projects with @dxdns/feflow",
 	"private": false,
 	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
@@ -15,7 +15,7 @@
 	},
 	"scripts": {
 		"build": "tsc",
-		"feflow": "npm run build && node ./output/index.js",
+		"feflow": "npm run build && node ./dist/index.js",
 		"format": "prettier --write .",
 		"lint": "prettier --check .",
 		"release": "npm run build && git push && git push --tags",
@@ -23,8 +23,13 @@
 		"release:minor": "npm version minor && npm run release",
 		"release:major": "npm version major && npm run release"
 	},
+	"files": [
+		"dist",
+		"!dist/**/*.test.*",
+		"!dist/**/*.spec.*"
+	],
 	"bin": {
-		"feflow": "./output/index.js"
+		"feflow": "./dist/index.js"
 	},
 	"type": "module",
 	"devDependencies": {
