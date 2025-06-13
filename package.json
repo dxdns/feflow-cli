@@ -2,24 +2,31 @@
 	"name": "@dxdns/feflow-cli",
 	"version": "0.0.1",
 	"description": "init projects with @dxdns/feflow",
-	"bin": {
-		"feflow": "./output/index.js"
+	"private": false,
+	"author": "Diógenes Rodrigues <https://github.com/dxdns>",
+	"publishConfig": {
+		"public": true
 	},
-	"type": "module",
+	"license": "MIT",
+	"homepage": "https://feflow.dxdns.dev",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dxdns/feflow.git"
+	},
 	"scripts": {
 		"build": "tsc",
 		"feflow": "npm run build && node ./output/index.js",
 		"format": "prettier --write .",
-		"lint": "prettier --check ."
+		"lint": "prettier --check .",
+		"release": "npm run build && git push && git push --tags",
+		"release:patch": "npm version patch && npm run release",
+		"release:minor": "npm version minor && npm run release",
+		"release:major": "npm version major && npm run release"
 	},
-	"keywords": [
-		"cli",
-		"feflow",
-		"svelte",
-		"vite",
-		"dxdns"
-	],
-	"license": "MIT",
+	"bin": {
+		"feflow": "./output/index.js"
+	},
+	"type": "module",
 	"devDependencies": {
 		"prettier": "^3.4.2",
 		"@types/node": "^24.0.1",
@@ -29,5 +36,13 @@
 	"dependencies": {
 		"chalk": "^5.4.1",
 		"prompts": "^2.4.2"
-	}
+	},
+	"keywords": [
+		"cli",
+		"feflow",
+		"ui",
+		"svelte",
+		"vite",
+		"dxdns"
+	]
 }
