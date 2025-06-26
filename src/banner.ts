@@ -6,7 +6,8 @@ export default function banner() {
 
 	const commands = [
 		{ cmd: "init", desc: "create a new project" },
-		{ cmd: "start", desc: `start ${chalk.gray("[project-name]")}` }
+		{ cmd: "start", desc: `start ${chalk.gray("[project-name]")}` },
+		{ cmd: "add", desc: `add ${chalk.gray("[component-name]")}` }
 	]
 
 	const cmdLines = commands.map(
